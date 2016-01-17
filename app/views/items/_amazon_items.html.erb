@@ -6,9 +6,7 @@
           <div class="img-wrap">
             <% #TODO 商品画像  modified %>
 
-            <%
-            image = item.get('ImageSets/ImageSet/LargeImage/URL') || "no-image.png"
-            %>
+            <% image = item.get('ImageSets/ImageSet/LargeImage/URL') || "no-image.png" %>
             <%= image_tag(image , alt: item.get('ItemAttributes/Title')) %>
             
           </div>
@@ -17,7 +15,7 @@
           <p class="title">
             <% #TODO 商品タイトル modified %>
 
-            <%= h(item.get('ItemAttributes/Title')) %>
+            　<%= item.get('ItemAttributes/Title') %>
             
           </p>
         </div>
