@@ -10,6 +10,6 @@ class NoticeMailer < ApplicationMailer
   def hello
     @greeting = "Hi"
 
-    mail to: "mnakaishi1@gmail.com"
+    mail to: "mnakaishi.test@gmail.com"
   end
 end
