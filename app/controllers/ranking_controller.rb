@@ -1,4 +1,5 @@
 class RankingController < ApplicationController
+# ranking
   def have_r
     ids = Have.group(:item_id).order('count_item_id desc').limit(10).count(:item_id).keys
     @ranking = Item.find(ids).sort_by{|i| ids.index(i.id)}
