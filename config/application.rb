@@ -8,6 +8,18 @@ Bundler.require(*Rails.groups)
 
 module Monolist
   class Application < Rails::Application
+    
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address => 'smtp.gmail.com',
+      :port => '587',
+      :domain => 'smtp.gmail.com',
+      :authentication => 'plain',
+      :user_name => ENV["SMTP_USER_NAME"] ,
+      :password => ENV["SMTP_USER_PASSWORD"]
+    }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -30,3 +42,5 @@ module Monolist
     end
   end
 end
+
+

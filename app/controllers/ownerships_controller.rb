@@ -12,7 +12,7 @@ class OwnershipsController < ApplicationController
     if @item.new_record?
       begin
         # TODO 商品情報の取得 Amazon::Ecs.item_lookupを用いてください
-        response = Amazon::Ecs.item_lookup(@item.asin, country:'jp')
+        response = Amazon::Ecs.item_lookup(@item.asin,response_group:'Medium', country:'jp')
       rescue Amazon::RequestError => e
         return render :js => "alert('#{e.message}')"
       end

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+   <h1>欲しいものランキング</h1>
+    <ol><% @ranking.each do |item| %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <li><% if item.large_image.present? %>
+              <%= image_tag(item.large_image , alt: item.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
+            <% end %>
+            </li>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= item.title %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+   </ol>
+  </div>
+</div>
